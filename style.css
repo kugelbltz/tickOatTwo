@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+    background: #121212;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    height: 100vh;
+
+    --red: #D74141;
+    --blue: #3B91E0;
+
+    position: relative;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info-btn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: #787878;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+button:hover {
+    color: #919191
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+h1 > b {
+    font-weight: 600;
+}
+
+.card {
+    background: #191919;
+    border-radius: 7px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+}
+
+.red {
+    color: var(--red);
+}
+
+.blue {
+    color: var(--blue);
+}
+
+#game-info {
+    margin-top: 3em;
+    width:100%;
+    display: grid;
+    grid-template-columns: 30% auto 30%;
+}
+
+.left {
+    justify-self: end;
+}
+
+.right {
+    justify-self: start;
+}
+
+#current {
+    font-size: 1.75em;
+    font-weight: 600;
+    opacity: 100%;
+}
+
+#score
+{
+    font-size: 1.5em;
+    font-weight: 500;
+    justify-self: center;
+}
+
+.player {
+    font-size: 1.5em;
+    font-weight: 500;
+    opacity: 15%;
+}
+
+#how-to {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modal {
+    display: none;
+    position: absolute;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+}
+
+.tick-oat-two {
+    word-spacing: -0.1em;
+}
+
+a {
+    color: inherit;
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ellipse-piece,
+.corner {
+    fill: transparent;
+}
+
+.ellipse-piece {
+    stroke:white;
+    stroke-width: 2px;
+}
+
+.corner:hover {
+    fill:rgba(255, 255, 255, 0.10);
+}
+
+.ellipse-piece:hover {
+    fill:rgba(255, 255, 255, 0.1);
+}
+
+#new-game {
+    display: none;
+    position: absolute;
+    bottom: 1.55em;
+    font-size: 20px;
+}
