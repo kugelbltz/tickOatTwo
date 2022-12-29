@@ -15,6 +15,11 @@
         <h1 class="tick-oat-two"><b class="red">Tick</b> oaT <b class="blue">Two</b></h1>
     
         <div id="board" class='card'>
+            <div id="game-won">
+                <span class="winner"><span id="winner"></span> won</span>
+                <button id="new-game" onclick="newGame()">New game</button>
+            </div>
+            
             <svg id="board-svg" width="477" height="477" xmlns="http://www.w3.org/2000/svg">
                 <path id="bottom-left" class="corner"
                     d="M0 237V0.5C0 35.1249 67.3945 64.5139 160.93 74.9453C171.251 169.065 200.737 237 235.5 237H0Z" fill="white" />
@@ -57,8 +62,6 @@
         </div>
     </main>
 
-    <button id="new-game" onclick="newGame()">New game</button>
-    
     <div id="modal" style="display: none">
         <div id="how-to" class='card' style="display: none">
             <button id="close-btn" onclick="closeHowTo()"><i class="fa-solid fa-circle-xmark"></i></button>

@@ -2,6 +2,9 @@ const howToCard = document.getElementById('how-to');
 const modal = document.getElementById('modal');
 const score = document.getElementById('score');
 const newGameBtn = document.getElementById('new-game');
+const gameWon = document.getElementById('game-won');
+const boardSvg = document.getElementById('board-svg');
+const winner = document.getElementById('winner');
 
 const Player = {
     UNKNOWN:0,
@@ -58,7 +61,8 @@ function newGame()
         }
     }
 
-    newGameBtn.style.display = 'none';
+    gameWon.style.display = 'none';
+    boardSvg.classList.toggle('disabled');
 
     const lines = document.querySelectorAll('line');
     for (let line of lines) {
@@ -155,14 +159,21 @@ function regionClicked(event) {
         pause = true;
 
         if (currentPlayer === Player.BLUE) {
+            winner.innerHTML = 'BLUE';
+            winner.className = 'blue';
             playerBlueScore += 1;
         }
         else if (currentPlayer === Player.RED) {
+            winner.innerHTML = 'RED';
+            winner.className = 'red';
             playerRedScore += 1;
         }
 
+        winner.style.fontSize = 'smaller';
         score.innerText = `${playerRedScore} - ${playerBlueScore}`;
-        newGameBtn.style.display = 'inline-block';
+        gameWon.style.display = 'flex';
+        boardSvg.classList.toggle('disabled');
+        
         return;
     }
 
