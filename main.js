@@ -37,6 +37,9 @@ let pause = false;
 let playerRedScore = 0;
 let playerBlueScore = 0;
 
+let alertTimer;
+
+
 function openHowTo()
 {
     modal.style.display = "block";
@@ -95,6 +98,19 @@ function checkHasWon() {
     return (board[0][0] + board[1][1] + board[2][2] === 9) || (board[0][2] + board[1][1] + board[2][0] === 9)
 }
 
+function displayAlert(message) {
+    clearTimeout(alertTimer);
+
+    const alert = document.getElementById('alert');
+
+    alert.style.opacity = "100%";
+    alert.innerText = message;
+
+    alertTimer = setTimeout(() => {
+        alert.style.opacity = "0%";
+    }, 2000);
+}
+
 function regionClicked(event) {
     if (pause) { return; }
 
@@ -102,22 +118,21 @@ function regionClicked(event) {
     const { i, j } = regions[event.target.id].positionIJ;
 
     if (lastI === i && lastJ === j)  {
-        console.log('Cannot play on the same region as the previous player')
+        displayAlert('Cannot select the last played region')
         return;
     }
 
     if (board[i][j] === Player.BLUE + Player.RED) {
-        console.log('Region is already filled')
+        displayAlert('The region is already filled')
         return;
     }
 
     if (board[i][j] === currentPlayer) {
-        console.log('Cannot play again on the same region')
+        displayAlert('Cannot select the region again')
         return;
     }
 
     board[i][j] += currentPlayer;
-    console.table(board);
 
     lastI = i;
     lastJ = j;
