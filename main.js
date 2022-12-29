@@ -33,7 +33,6 @@ const board = [
 let lastI = -1;
 let lastJ = -1;
 let currentPlayer = Player.RED
-let pause = false;
 let playerRedScore = 0;
 let playerBlueScore = 0;
 
@@ -56,7 +55,6 @@ function newGame()
 {
     lastI = -1;
     lastJ = -1;
-    pause = false;
 
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
@@ -112,7 +110,6 @@ function displayAlert(message) {
 }
 
 function regionClicked(event) {
-    if (pause) { return; }
 
     // IJ coordinates of the clicked region
     const { i, j } = regions[event.target.id].positionIJ;
@@ -171,7 +168,6 @@ function regionClicked(event) {
 
     // Check winner
     if (checkHasWon()) {
-        pause = true;
 
         if (currentPlayer === Player.BLUE) {
             winner.innerHTML = 'BLUE';
