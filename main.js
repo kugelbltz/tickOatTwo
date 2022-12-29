@@ -64,6 +64,7 @@ function newGame()
 
     gameWon.style.display = 'none';
     boardSvg.classList.toggle('disabled');
+    boardSvg.style.opacity = "100%";
 
     const lines = document.querySelectorAll('line');
     for (let line of lines) {
@@ -184,6 +185,7 @@ function regionClicked(event) {
         score.innerText = `${playerRedScore} - ${playerBlueScore}`;
         gameWon.style.display = 'flex';
         boardSvg.classList.toggle('disabled');
+        boardSvg.style.opacity = "15%";
         
         return;
     }
@@ -212,4 +214,6 @@ function drawBoard()
         domElement.addEventListener('click', regionClicked);
         domElement.style.transform = 'translate(' + positionXY.x + 'px, ' + positionXY.y + 'px)';
     }
+
+    boardSvg.style.opacity = "100%";
 }
