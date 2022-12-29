@@ -39,6 +39,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    user-select: none;
 }
 
 h1 {
@@ -46,6 +47,7 @@ h1 {
     font-weight: 300;
     margin-top: 0;
     margin-bottom: 1rem;
+    cursor: pointer;
 }
 
 h1 > b {
@@ -160,6 +162,7 @@ a {
 .ellipse-piece,
 .corner {
     fill: transparent;
+    cursor: pointer;
 }
 
 .ellipse-piece {
