@@ -191,7 +191,6 @@ function regionClicked(event) {
     }
 
     const currentPlayerElement = document.getElementById('current');
-    currentPlayerElement.removeAttribute('id')
 
     if (currentPlayer === Player.RED) {
         currentPlayer = Player.BLUE;
@@ -203,6 +202,11 @@ function regionClicked(event) {
         const player = document.getElementsByClassName('player red')[0];
         player.setAttribute('id', 'current');
     }
+
+        // Adding a delay to remove jitter
+        setTimeout(() => {
+            currentPlayerElement.removeAttribute('id')
+        }, 50);       
 }
 
 function drawBoard()
