@@ -112,9 +112,12 @@ h1 > b {
 
 #how-to {
     position: absolute;
+    width: min(75vw, 800px);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    padding-top: 4rem;
 
     display: flex;
     flex-direction: column;
@@ -207,4 +210,37 @@ line {
     to {
         stroke-dashoffset: 0;
     }
+}
+
+#close-btn {
+    position: absolute;
+    padding: 0;
+    margin: 1rem 2rem 0 0;
+    top: 0px;
+    right: 0px;
+}
+
+#dialog-content {
+    max-height: 45vh;
+    overflow: auto;
+    padding-right: 1rem;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff0c;
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff18;
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff1f;
 }
